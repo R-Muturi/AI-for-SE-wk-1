@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VibeLearn E-Learning Prototype</title>
+    <style>
+        /* Embed CSS here for simplicity, or in a separate style.css */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+            color: #333;
+        }
+
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        main {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        h2 {
+            color: #007bff;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        /* --- Course List Styling --- */
+        #course-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            list-style: none;
+            padding: 0;
+        }
+
+        .course-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 20px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .course-card h3 {
+            color: #333;
+            margin-top: 0;
+        }
+        
+        .status-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+
+        .status-badge.in-progress {
+            background-color: #ffc107;
+            color: #333;
+        }
+
+        .status-badge.completed {
+            background-color: #28a745;
+            color: white;
+        }
+
+
+        /* --- Course Detail Styling --- */
+        #course-detail-view {
+            display: none; /* Hidden by default */
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            margin-top: 20px;
+        }
+
+        #course-detail-view h2 {
+            margin-bottom: 20px;
+            border-bottom: 2px solid #007bff;
+        }
+
+        .lesson-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .lesson-list li {
+            padding: 10px 0;
+            border-bottom: 1px dashed #eee;
+        }
+
+        /* --- Buttons and Actions --- */
+        .btn {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.2s;
+            margin-right: 10px;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        
+        .btn-success {
+            background-color: #28a745;
+            color: white;
+        }
+        
+        .btn-success:hover {
+            background-color: #1e7e34;
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background-color: #5a6268;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>VibeLearn E-Learning Prototype 🚀</h1>
+    </header>
+
+    <main>
+        
+        <section id="course-list-section">
+            <h2>Available Courses</h2>
+            <ul id="course-list">
+                </ul>
+        </section>
+
+        <section id="course-detail-view">
+            <h2 id="detail-title"></h2>
+            <p id="detail-description"></p>
+            
+            <h3>Lessons</h3>
+            <ul id="detail-lessons" class="lesson-list">
+                </ul>
+            
+            <div id="detail-actions">
+                <button id="mark-complete-btn" class="btn btn-success">Mark as Completed</button>
+                <button id="go-back-btn" class="btn btn-secondary">← Back to Courses</button>
+                <p id="detail-progress" style="margin-top: 15px; font-weight: bold;"></p>
+            </div>
+            
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
