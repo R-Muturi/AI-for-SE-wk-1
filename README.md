@@ -37,5 +37,3 @@ This project is a purely client-side application and does not require a web serv
 * Once a course is marked complete, the status is saved, and the button is disabled. If you refresh the browser, the completed status will persist.
 
 ---
-
-## 📂 Project Structure
